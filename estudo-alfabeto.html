@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo do Alfabeto - Hebraico Fácil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">Hebraico Fácil 🇮🇱</div>
+    <button class="botao-menu" onclick="abrirMenu()" aria-label="Abrir menu">☰</button>
+</header>
+
+<nav id="menu-lateral" class="menu-lateral">
+    <button class="fechar-menu" onclick="fecharMenu()" aria-label="Fechar menu">×</button>
+    <h2>MENU</h2>
+    <a href="index.html">Início</a>
+    <a href="sala.html">Sala de Aula</a>
+    <a href="cadastro.html">Cadastro / Login</a>
+    <a href="perfil.html">Perfil</a>
+</nav>
+<div id="fundo-menu" class="fundo-menu" onclick="fecharMenu()"></div>
+
+<main class="container">
+    <section class="class-header study-page-header">
+        <a class="back-link" href="sala.html">← Voltar para a Sala de Aula</a>
+        <span class="etiqueta">🔤 ALFABETO HEBRAICO</span>
+        <h1>Vamos aprender as letras!</h1>
+        <p>Comece pelas primeiras letras do alfabeto hebraico e pratique seus nomes e formas.</p>
+    </section>
+
+    <section class="study-section">
+        <div class="section-title">
+            <div>
+                <span class="etiqueta">LIÇÃO 1</span>
+                <h2>Primeiras letras</h2>
+            </div>
+            <span class="progress-label">4 letras</span>
+        </div>
+        <div class="letter-grid">
+            <div class="letter-card"><span class="hebrew">א</span><h3>Álef</h3><p>Primeira letra</p></div>
+            <div class="letter-card"><span class="hebrew">ב</span><h3>Bet</h3><p>Segunda letra</p></div>
+            <div class="letter-card"><span class="hebrew">ג</span><h3>Guímel</h3><p>Terceira letra</p></div>
+            <div class="letter-card"><span class="hebrew">ד</span><h3>Dálet</h3><p>Quarta letra</p></div>
+            <div class="letter-card"><span class="hebrew">ה</span><h3>Hê</h3><p>Quinta letra</p></div>
+            <div class="letter-card"><span class="hebrew">ו</span><h3>Vav</h3><p>Sexta letra</p></div>
+            <div class="letter-card"><span class="hebrew">ז</span><h3>Záin</h3><p>Setima letra</p></div>
+            <div class="letter-card"><span class="hebrew">ח</span><h3>Chet (ou Het / Heth)</h3><p>Oitava letra</p></div>
+            <div class="letter-card"><span class="hebrew">ט</span><h3>Tet (ou Têt)</h3><p>Nona letra</p></div>
+            <div class="letter-card"><span class="hebrew">י</span><h3>Yod</h3><p>Decima letra</p></div>
+            <div class="letter-card"><span class="hebrew">כ/ך</span><h3>Kaf(Charf)</h3><p>Decima Primeira letra</p></div>
+            <div class="letter-card"><span class="hebrew">ל</span><h3>Lamed </h3><p>Decima Segunda letra</p></div>
+            <div class="letter-card"><span class="hebrew">מ/ם</span><h3>Mem</h3><p>Decima Terceira letra</p></div>
+            <div class="letter-card"><span class="hebrew">ן/נ</span><h3>Nun</h3><p>Decima Quarta letra</p></div>
+            <div class="letter-card"><span class="hebrew">ס</span><h3>Samech</h3><p>Decima Quinta letra</p></div>
+            <div class="letter-card"><span class="hebrew">ע</span><h3>Ayin</h3><p>Decima Sexta letra</p></div>
+            <div class="letter-card"><span class="hebrew">פ/ף</span>Fay<h3></h3><p>Decima Setima letra</p></div>
+            <div class="letter-card"><span class="hebrew">צ/ץ</span><h3>Tsade</h3><p>Decima oitava letra</p></div>
+            <div class="letter-card"><span class="hebrew">ק</span><h3>Qof</h3><p>Decima nona letra</p></div>
+            <div class="letter-card"><span class="hebrew">ר</span><h3>Resh</h3><p>vigésima letra</p></div>
+            <div class="letter-card"><span class="hebrew">ש</span><h3>Shin</h3><p>vigésima primeira letra</p></div>
+            <div class="letter-card"><span class="hebrew">ת</span><h3>Tav</h3><p>vigésima segunda letra</p></div>
+        </div>
+    </section>
+
+    <section class="study-section">
+        <div class="section-title">
+            <div>
+                <span class="etiqueta">🎥 AULA EM VÍDEO</span>
+                <h2>Aprenda com áudio</h2>
+            </div>
+        </div>
+        <p class="section-description">Assista à aula para ouvir as letras e acompanhar a pronúncia.</p>
+        <div class="video-grid single-video-grid">
+            <a class="video-card" href="https://www.youtube.com/watch?v=qNp5_WUOEAw" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/qNp5_WUOEAw/hqdefault.jpg" alt="Vídeo sobre o alfabeto hebraico">
+                <div class="video-content">
+                    <span class="video-tag">🔤 ALFABETO</span>
+                    <h3>Alfabeto Hebraico: letras e áudio da pronúncia</h3>
+                    <span class="watch-link">▶ Assistir no YouTube</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="study-section next-study-card">
+        <h2>Quer treinar os sons?</h2>
+        <p>Depois do alfabeto, você pode estudar a pronúncia do hebraico.</p>
+        <a class="primary-button" href="estudo-pronuncia.html">Ir para Pronúncia →</a>
+    </section>
+</main>
+
+<footer>Hebraico Fácil - Aprenda um pouco todos os dias.</footer>
+
+<script>
+function abrirMenu() {
+    document.getElementById("menu-lateral").classList.add("aberto");
+    document.getElementById("fundo-menu").classList.add("aberto");
+}
+function fecharMenu() {
+    document.getElementById("menu-lateral").classList.remove("aberto");
+    document.getElementById("fundo-menu").classList.remove("aberto");
+}
+</script>
+</body>
+</html>
