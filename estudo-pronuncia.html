@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo de Pronúncia - Hebraico Fácil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">Hebraico Fácil 🇮🇱</div>
+    <button class="botao-menu" onclick="abrirMenu()" aria-label="Abrir menu">☰</button>
+</header>
+
+<nav id="menu-lateral" class="menu-lateral">
+    <button class="fechar-menu" onclick="fecharMenu()" aria-label="Fechar menu">×</button>
+    <h2>MENU</h2>
+    <a href="index.html">Início</a>
+    <a href="sala.html">Sala de Aula</a>
+    <a href="cadastro.html">Cadastro / Login</a>
+    <a href="perfil.html">Perfil</a>
+</nav>
+<div id="fundo-menu" class="fundo-menu" onclick="fecharMenu()"></div>
+
+<main class="container">
+    <section class="class-header study-page-header">
+        <a class="back-link" href="sala.html">← Voltar para a Sala de Aula</a>
+        <span class="etiqueta">🗣️ PRONÚNCIA</span>
+        <h1>Vamos praticar os sons!</h1>
+        <p>Veja algumas palavras básicas em hebraico e depois assista à aula para ouvir a pronúncia.</p>
+    </section>
+
+    <section class="study-section">
+        <div class="section-title">
+            <div>
+                <span class="etiqueta">LIÇÃO 1</span>
+                <h2>Palavras básicas</h2>
+            </div>
+            <span class="progress-label">3 palavras</span>
+        </div>
+        <div class="word-box">
+            <div>
+                <span class="hebrew-word">שלום</span>
+                <strong>Shalom</strong>
+                <p>Olá / Paz</p>
+            </div>
+            <div>
+                <span class="hebrew-word">תודה</span>
+                <strong>Todá</strong>
+                <p>Obrigado(a)</p>
+            </div>
+            <div>
+                <span class="hebrew-word">כן</span>
+                <strong>Ken</strong>
+                <p>Sim</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="study-section">
+        <div class="section-title">
+            <div>
+                <span class="etiqueta">🎥 AULA EM VÍDEO</span>
+                <h2>Treine sua pronúncia</h2>
+            </div>
+        </div>
+        <p class="section-description">Assista à aula e pratique os sons do hebraico.</p>
+        <div class="video-grid single-video-grid">
+            <a class="video-card" href="https://www.youtube.com/watch?v=cWO34tBF0Uc" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/cWO34tBF0Uc/hqdefault.jpg" alt="Vídeo sobre pronúncia em hebraico">
+                <div class="video-content">
+                    <span class="video-tag">🗣️ PRONÚNCIA</span>
+                    <h3>Aula de pronúncia em Hebraico</h3>
+                    <span class="watch-link">▶ Assistir no YouTube</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="study-section next-study-card">
+        <h2>Quer aprender as letras?</h2>
+        <p>Você pode voltar ao alfabeto e continuar sua jornada de estudos.</p>
+        <a class="primary-button" href="estudo-alfabeto.html">Ir para Alfabeto →</a>
+    </section>
+</main>
+
+<footer>Hebraico Fácil - Aprenda um pouco todos os dias.</footer>
+
+<script>
+function abrirMenu() {
+    document.getElementById("menu-lateral").classList.add("aberto");
+    document.getElementById("fundo-menu").classList.add("aberto");
+}
+function fecharMenu() {
+    document.getElementById("menu-lateral").classList.remove("aberto");
+    document.getElementById("fundo-menu").classList.remove("aberto");
+}
+</script>
+</body>
+</html>

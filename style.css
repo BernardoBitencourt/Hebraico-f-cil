@@ -1,0 +1,704 @@
+
+:root {
+    --azul: #1688e5;
+    --azul-forte: #0874c9;
+    --azul-escuro: #075b9e;
+    --azul-claro: #eaf6ff;
+    --branco: #ffffff;
+    --texto: #17324d;
+    --borda: #b9dcf7;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--branco);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/*  CABEÇALHO */
+
+header {
+    height: 80px;
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--azul);
+    border-bottom: 4px solid var(--azul-escuro);
+    box-shadow: 0 5px 20px rgba(7, 91, 158, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--branco);
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão do menu */
+
+.botao-menu {
+    width: 55px;
+    height: 55px;
+    border: 2px solid var(--branco);
+    border-radius: 0;
+    background: var(--azul-forte);
+    color: var(--branco);
+    font-size: 29px;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.botao-menu:hover {
+    background: var(--branco);
+    color: var(--azul-forte);
+    transform: scale(1.05);
+}
+
+/* Esconde a navegação antiga */
+header nav {
+    display: none;
+}
+
+/*  MENU LATERAL */
+
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    right: -330px;
+    width: 300px;
+    max-width: 85vw;
+    height: 100vh;
+    padding: 25px;
+    background: var(--azul);
+    border-left: 4px solid var(--azul-escuro);
+    border-radius: 0;
+    box-shadow: -8px 0 25px rgba(0, 0, 0, 0.25);
+    z-index: 2000;
+    transition: right 0.35s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-lateral.aberto {
+    right: 0;
+}
+
+.menu-lateral h2 {
+    color: var(--branco);
+    font-size: 26px;
+    margin: 10px 0 25px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 12px;
+}
+
+.menu-lateral a {
+    display: block;
+    color: var(--branco);
+    background: var(--azul-forte);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 0;
+    transition: 0.2s ease;
+}
+
+.menu-lateral a:hover {
+    background: var(--branco);
+    color: var(--azul-forte);
+    border-color: var(--branco);
+    transform: translateX(-4px);
+}
+
+.fechar-menu {
+    align-self: flex-end;
+    width: 42px;
+    height: 42px;
+    border: 2px solid var(--branco);
+    border-radius: 0;
+    background: transparent;
+    color: var(--branco);
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.fechar-menu:hover {
+    background: var(--branco);
+    color: var(--azul-forte);
+}
+
+/* Fundo escuro atrás do menu */
+
+.fundo-menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 55, 100, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1500;
+    transition: 0.3s ease;
+}
+
+.fundo-menu.aberto {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*  CONTEÚDO*/
+
+.container {
+    width: min(1000px, 92%);
+    margin: 40px auto;
+}
+
+.hero,
+.card,
+form,
+.profile {
+    background: var(--branco);
+    border: 2px solid var(--borda);
+    border-radius: 0;
+    padding: 28px;
+    box-shadow: 0 6px 20px rgba(22, 136, 229, 0.10);
+}
+
+.hero {
+    text-align: center;
+    padding: 55px 25px;
+    border-top: 6px solid var(--azul);
+}
+
+h1,
+h2 {
+    color: var(--azul-escuro);
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: 38px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 14px;
+    background: var(--azul);
+    color: var(--branco);
+    border: 2px solid var(--azul);
+    padding: 12px 20px;
+    border-radius: 0;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.botao:hover {
+    background: var(--azul-forte);
+    border-color: var(--azul-forte);
+    transform: translateY(-2px);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.letra {
+    font-size: 42px;
+    color: var(--azul-forte);
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0 15px;
+    border: 2px solid var(--borda);
+    border-radius: 0;
+    color: var(--texto);
+    background: var(--branco);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(22, 136, 229, 0.12);
+}
+
+label {
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--azul-escuro);
+    border-top: 2px solid var(--borda);
+    margin-top: 40px;
+    background: var(--azul-claro);
+}
+
+/*  SALA DE AULA - NOVO LAYOUT*/
+
+.class-header {
+    background: linear-gradient(135deg, var(--azul), var(--azul-forte));
+    color: white;
+    padding: 32px 28px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 8px 24px rgba(22, 136, 229, .18);
+}
+
+.class-header h1 {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.class-header p {
+    max-width: 700px;
+    margin-bottom: 0;
+    color: rgba(255,255,255,.92);
+}
+
+.etiqueta {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: var(--azul-escuro);
+    background: #dff2ff;
+    border: 1px solid #b9dcf7;
+    padding: 6px 10px;
+}
+
+.class-header .etiqueta {
+    color: white;
+    background: rgba(255,255,255,.14);
+    border-color: rgba(255,255,255,.3);
+}
+
+.learning-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin: 24px 0 30px;
+}
+
+.learning-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px;
+    text-decoration: none;
+    color: var(--texto);
+    background: white;
+    border: 2px solid var(--borda);
+    border-left: 7px solid var(--azul);
+    border-radius: 0;
+    box-shadow: 0 6px 18px rgba(22,136,229,.09);
+    transition: .2s ease;
+}
+
+.learning-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--azul);
+    box-shadow: 0 10px 25px rgba(22,136,229,.15);
+}
+
+.learning-icon {
+    min-width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    background: var(--azul-claro);
+    border: 2px solid var(--borda);
+    font-size: 32px;
+}
+
+.learning-card h2 {
+    margin-bottom: 5px;
+    font-size: 21px;
+}
+
+.learning-card p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.card-link,
+.watch-link {
+    color: var(--azul-forte);
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.study-section {
+    margin-top: 30px;
+    background: white;
+    border: 2px solid var(--borda);
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(22,136,229,.08);
+}
+
+.section-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.progress-label {
+    color: var(--azul-escuro);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.letter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.letter-card {
+    padding: 18px 12px;
+    text-align: center;
+    background: var(--azul-claro);
+    border: 1px solid var(--borda);
+}
+
+.letter-card .hebrew {
+    display: block;
+    color: var(--azul-forte);
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.letter-card h3 {
+    color: var(--azul-escuro);
+    margin-bottom: 2px;
+}
+
+.letter-card p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.word-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.word-box > div {
+    padding: 18px;
+    border-left: 5px solid var(--azul);
+    background: var(--azul-claro);
+}
+
+.hebrew-word {
+    display: block;
+    font-size: 34px;
+    color: var(--azul-forte);
+    font-weight: bold;
+}
+
+.word-box strong {
+    display: block;
+    color: var(--azul-escuro);
+}
+
+.word-box p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.section-description {
+    margin-top: -8px;
+    margin-bottom: 18px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.video-card {
+    display: block;
+    text-decoration: none;
+    color: var(--texto);
+    background: white;
+    border: 2px solid var(--borda);
+    overflow: hidden;
+    transition: .2s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--azul);
+    box-shadow: 0 8px 20px rgba(22,136,229,.15);
+}
+
+.video-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.video-content {
+    padding: 16px;
+}
+
+.video-tag {
+    color: var(--azul-forte);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.video-content h3 {
+    color: var(--azul-escuro);
+    font-size: 17px;
+    margin: 7px 0 10px;
+}
+
+
+
+/* Páginas individuais de estudo */
+.back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--azul-forte);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.study-page-header h1 {
+    margin-top: 8px;
+}
+
+.single-video-grid {
+    grid-template-columns: minmax(0, 760px);
+}
+
+.next-study-card {
+    text-align: center;
+}
+
+.next-study-card h2 {
+    color: var(--azul-escuro);
+    margin-bottom: 8px;
+}
+
+.next-study-card p {
+    margin-bottom: 18px;
+}
+
+.primary-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--azul-forte);
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    border: 2px solid var(--azul-forte);
+}
+
+.primary-button:hover {
+    background: var(--azul-escuro);
+    border-color: var(--azul-escuro);
+}
+
+.classroom-info {
+    text-align: center;
+}
+
+.classroom-info h2 {
+    color: var(--azul-escuro);
+}
+
+/* RESPONSIVIDADE*/
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 28px auto;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .hero,
+    .card,
+    form,
+    .profile {
+        padding: 22px;
+    }
+
+    .class-header {
+        padding: 28px 22px;
+    }
+
+    .learning-options,
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .letter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .word-box {
+        grid-template-columns: 1fr;
+    }
+
+    .study-section {
+        padding: 20px;
+    }
+
+    .section-title {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .single-video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 70px;
+        padding: 8px 14px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .botao-menu {
+        width: 48px;
+        height: 48px;
+        font-size: 25px;
+    }
+
+    .menu-lateral {
+        width: 300px;
+        max-width: 88vw;
+        padding: 20px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 22px auto;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .hero {
+        padding: 35px 18px;
+    }
+
+    .hero,
+    .card,
+    form,
+    .profile {
+        padding: 18px;
+    }
+
+    .class-header {
+        padding: 24px 18px;
+    }
+
+    .learning-card {
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .learning-icon {
+        min-width: 52px;
+        height: 52px;
+        font-size: 26px;
+    }
+
+    .letter-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .letter-card {
+        padding: 14px 8px;
+    }
+
+    .letter-card .hebrew {
+        font-size: 42px;
+    }
+
+    .study-section {
+        padding: 16px;
+    }
+
+    .video-content {
+        padding: 14px;
+    }
+
+    .botao,
+    .primary-button {
+        max-width: 100%;
+    }
+
+    input {
+        font-size: 16px;
+    }
+}

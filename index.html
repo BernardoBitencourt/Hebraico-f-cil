@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hebraico Fácil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">Hebraico Fácil 🇮🇱</div>
+
+    <button class="botao-menu" onclick="abrirMenu()" aria-label="Abrir menu">
+        ☰
+    </button>
+</header>
+
+<nav id="menu-lateral" class="menu-lateral">
+    <button class="fechar-menu" onclick="fecharMenu()" aria-label="Fechar menu">×</button>
+
+    <h2>MENU</h2>
+
+    <a href="index.html">Início</a>
+    <a href="sala.html">Sala de Aula</a>
+    <a href="cadastro.html">Cadastro / Login</a>
+    <a href="perfil.html">Perfil</a>
+</nav>
+
+<div id="fundo-menu" class="fundo-menu" onclick="fecharMenu()"></div>
+
+<main class="container">
+    <section class="hero">
+        <h1>Aprenda Hebraico</h1>
+        <p>Um espaço simples para quem fala português aprender a língua hebraica.</p>
+        <p>Aprenda o alfabeto, palavras e frases básicas de forma fácil.</p>
+        <a class="botao" href="sala.html">Começar a estudar</a>
+    </section>
+
+    <section class="grid">
+        <div class="card">
+            <h2>📚 Aulas</h2>
+            <p>Conteúdos curtos para estudar no seu ritmo.</p>
+        </div>
+        <div class="card">
+            <h2>🔤 Alfabeto</h2>
+            <p>Conheça as letras hebraicas e seus sons.</p>
+        </div>
+        <div class="card">
+            <h2>👤 Perfil</h2>
+            <p>Acompanhe suas informações e seu progresso.</p>
+        </div>
+    </section>
+</main>
+
+<footer>Hebraico Fácil - Aprenda um pouco todos os dias.</footer>
+<script>
+function abrirMenu() {
+    document.getElementById("menu-lateral").classList.add("aberto");
+    document.getElementById("fundo-menu").classList.add("aberto");
+}
+
+function fecharMenu() {
+    document.getElementById("menu-lateral").classList.remove("aberto");
+    document.getElementById("fundo-menu").classList.remove("aberto");
+}
+</script>
+</body>
+</html>

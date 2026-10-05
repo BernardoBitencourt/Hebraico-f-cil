@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Aula - Hebraico Fácil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="logo">Hebraico Fácil 🇮🇱</div>
+    <button class="botao-menu" onclick="abrirMenu()" aria-label="Abrir menu">☰</button>
+</header>
+
+<nav id="menu-lateral" class="menu-lateral">
+    <button class="fechar-menu" onclick="fecharMenu()" aria-label="Fechar menu">×</button>
+    <h2>MENU</h2>
+    <a href="index.html">Início</a>
+    <a href="sala.html">Sala de Aula</a>
+    <a href="cadastro.html">Cadastro / Login</a>
+    <a href="perfil.html">Perfil</a>
+</nav>
+<div id="fundo-menu" class="fundo-menu" onclick="fecharMenu()"></div>
+
+<main class="container">
+    <section class="class-header">
+        <span class="etiqueta">📚 SALA DE AULA</span>
+        <h1>O que você quer aprender?</h1>
+        <p>Escolha um caminho para começar seus estudos de hebraico. Você pode trocar de assunto quando quiser.</p>
+    </section>
+
+    <section class="learning-options">
+        <a class="learning-card" href="estudo-alfabeto.html">
+            <div class="learning-icon">🔤</div>
+            <div>
+                <h2>Aprender o Alfabeto</h2>
+                <p>Conheça as letras hebraicas, seus nomes e pratique a leitura.</p>
+                <span class="card-link">Começar →</span>
+            </div>
+        </a>
+
+        <a class="learning-card" href="estudo-pronuncia.html">
+            <div class="learning-icon">🗣️</div>
+            <div>
+                <h2>Aprender Pronúncia</h2>
+                <p>Treine os sons do hebraico e veja como a língua é pronunciada.</p>
+                <span class="card-link">Começar →</span>
+            </div>
+        </a>
+    </section>
+
+    <section class="study-section classroom-info">
+        <h2>Escolha seu curso</h2>
+        <p>Clique em <strong>Começar</strong> em uma das opções acima. O estudo e os vídeos de cada tema ficam em uma página própria.</p>
+    </section>
+
+</main>
+
+<footer>Hebraico Fácil - Aprenda um pouco todos os dias.</footer>
+
+<script>
+function abrirMenu() {
+    document.getElementById("menu-lateral").classList.add("aberto");
+    document.getElementById("fundo-menu").classList.add("aberto");
+}
+function fecharMenu() {
+    document.getElementById("menu-lateral").classList.remove("aberto");
+    document.getElementById("fundo-menu").classList.remove("aberto");
+}
+</script>
+</body>
+</html>
