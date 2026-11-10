@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Hebraico Fácil</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="menu.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo">Hebraico Fácil 🇮🇱</div>
+    <button class="botao-menu" onclick="abrirMenu()" aria-label="Abrir menu">☰</button>
+</header>
+
+<nav id="menu-lateral" class="menu-lateral">
+    <button class="fechar-menu" onclick="fecharMenu()" aria-label="Fechar menu">×</button>
+    <h2>MENU</h2>
+    <a href="index.html">Início</a>
+    <a href="sala.html">Sala de Aula</a>
+    <a href="cadastro.html">Cadastro</a>
+    <a href="perfil.html">Perfil</a>
+</nav>
+
+<div id="fundo-menu" class="fundo-menu" onclick="fecharMenu()"></div>
+
+<main class="container">
+    <div class="profile">
+        <h1>Meu Perfil</h1>
+        <p><strong>Nome:</strong> <span id="nomePerfil">Visitante</span></p>
+        <p><strong>E-mail:</strong> <span id="emailPerfil">Não cadastrado</span></p>
+        <p><strong>Progresso:</strong> Começando os estudos.</p>
+        <a class="botao" href="sala.html">Continuar aula</a>
+    </div>
+</main>
+
+<footer>Hebraico Fácil - Aprenda um pouco todos os dias.</footer>
+
+</body>
+</html>

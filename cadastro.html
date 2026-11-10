@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro- Hebraico Fácil</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="menu.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo">Hebraico Fácil 🇮🇱</div>
+
+    <button class="botao-menu" onclick="abrirMenu()" aria-label="Abrir menu">☰</button>
+</header>
+
+<nav id="menu-lateral" class="menu-lateral">
+    <button class="fechar-menu" onclick="fecharMenu()" aria-label="Fechar menu">×</button>
+
+    <h2>MENU</h2>
+
+    <a href="index.html">Início</a>
+    <a href="sala.html">Sala de Aula</a>
+    <a href="cadastro.html">Cadastro</a>
+    <a href="perfil.html">Perfil</a>
+</nav>
+
+<div id="fundo-menu" class="fundo-menu" onclick="fecharMenu()"></div>
+
+<main class="container">
+    <div class="grid">
+        <form id="cadastroForm">
+            <h2>Criar conta</h2>
+            <label>Nome</label>
+            <input id="nome" required>
+            <label>E-mail</label>
+            <input id="email" type="email" required>
+            <label>Senha</label>
+            <input id="senha" type="password" required>
+            <button class="botao" type="submit">Cadastrar</button>
+            <p id="mensagem">Se ja fez seu cadastro clique aqui para logar <a href="login.html">Login</a></p>
+        </form>
+    </div>
+</main>
+
+<footer>Hebraico Fácil - Aprenda um pouco todos os dias.</footer>
+
+</body>
+</html>
