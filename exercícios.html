@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios - Hebraico Fácil</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="menu.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">Hebraico Fácil 🇮🇱</div>
+    <button class="botao-menu" onclick="abrirMenu()" aria-label="Abrir menu">☰</button>
+</header>
+
+<nav id="menu-lateral" class="menu-lateral">
+    <button class="fechar-menu" onclick="fecharMenu()" aria-label="Fechar menu">×</button>
+    <h2>MENU</h2>
+    <a href="index.html">Início</a>
+    <a href="sala.html">Sala de Aula</a>
+    <a href="exercicios.html">Exercícios</a>
+    <a href="cadastro.html">Cadastro</a>
+    <a href="perfil.html">Perfil</a>
+</nav>
+<div id="fundo-menu" class="fundo-menu" onclick="fecharMenu()"></div>
+
+<main class="container">
+
+    <section class="class-header">
+        <span class="etiqueta">✏️ PRATIQUE SEU HEBRAICO</span>
+        <h1>Hora de praticar!</h1>
+        <p>Responda às perguntas e teste o que você aprendeu sobre o alfabeto e algumas palavras em hebraico.</p>
+    </section>
+
+    <section class="study-section">
+        <div class="section-title">
+            <div>
+                <span class="etiqueta">EXERCÍCIO 1</span>
+                <h2>Vocabulário básico</h2>
+            </div>
+            <span class="progress-label" id="contador">Pergunta 1 de 5</span>
+        </div>
+
+        <p id="pergunta">O que significa a palavra שלום (Shalom)?</p>
+        <div class="grid" id="alternativas">
+            <button class="botao" type="button" onclick="responder(0)">Obrigado</button>
+            <button class="botao" type="button" onclick="responder(1)">Olá / Paz</button>
+            <button class="botao" type="button" onclick="responder(2)">Sim</button>
+        </div>
+
+        <p id="feedback" aria-live="polite"></p>
+        <button class="botao" id="proximo" type="button" onclick="proximaPergunta()" hidden>Próxima pergunta</button>
+    </section>
+
+    <section class="study-section classroom-info">
+        <h2>Uma dica!</h2>
+        <p>Se tiver dificuldade, volte às aulas de <a class="back-link" href="estudo-alfabeto.html">alfabeto</a> e <a class="back-link" href="estudo-pronuncia.html">pronúncia</a> para revisar o conteúdo.</p>
+        <a class="primary-button" href="sala.html">Voltar para a sala de aula</a>
+    </section>
+
+</main>
+
+<footer>Hebraico Fácil - Aprenda um pouco todos os dias.</footer>
+
+<script>
+    const questoes = [
+        {
+            pergunta: "O que significa a palavra שלום (Shalom)?",
+            alternativas: ["Obrigado", "Olá / Paz", "Sim"],
+            correta: 1
+        },
+        {
+            pergunta: "Como se diz “obrigado” em hebraico?",
+            alternativas: ["תודה (Todá)", "כן (Ken)", "שלום (Shalom)"],
+            correta: 0
+        },
+        {
+            pergunta: "O que significa כן (Ken)?",
+            alternativas: ["Não", "Por favor", "Sim"],
+            correta: 2
+        },
+        {
+            pergunta: "Qual destas é uma letra do alfabeto hebraico?",
+            alternativas: ["א (Alef)", "A", "B"],
+            correta: 0
+        },
+        {
+            pergunta: "Qual é a direção tradicional da escrita hebraica?",
+            alternativas: ["Da esquerda para a direita", "Da direita para a esquerda", "De cima para baixo"],
+            correta: 1
+        }
+    ];
+
+    let atual = 0;
+    let pontos = 0;
+    let respondeu = false;
+
+    function mostrarPergunta() {
+        respondeu = false;
+        document.getElementById("pergunta").textContent = questoes[atual].pergunta;
+        document.getElementById("contador").textContent =
+            "Pergunta " + (atual + 1) + " de " + questoes.length;
+        document.getElementById("feedback").textContent = "";
+        document.getElementById("proximo").hidden = true;
+
+        const area = document.getElementById("alternativas");
+        area.innerHTML = "";
+
+        questoes[atual].alternativas.forEach(function(opcao, indice) {
+            const botao = document.createElement("button");
+            botao.type = "button";
+            botao.className = "botao";
+            botao.textContent = opcao;
+            botao.addEventListener("click", function() {
+                responder(indice);
+            });
+            area.appendChild(botao);
+        });
+    }
+
+    function responder(escolha) {
+        if (respondeu) return;
+
+        respondeu = true;
+        const correta = questoes[atual].correta;
+        const feedback = document.getElementById("feedback");
+
+        if (escolha === correta) {
+            pontos++;
+            feedback.textContent = "Muito bem! Você acertou. 🎉";
+        } else {
+            feedback.textContent = "Quase! A resposta correta é: " +
+                questoes[atual].alternativas[correta] + ".";
+        }
+
+        document.querySelectorAll("#alternativas button").forEach(function(botao) {
+            botao.disabled = true;
+        });
+
+        document.getElementById("proximo").hidden = false;
+        document.getElementById("proximo").textContent =
+            atual === questoes.length - 1 ? "Ver resultado" : "Próxima pergunta";
+    }
+
+    function proximaPergunta() {
+        if (atual < questoes.length - 1) {
+            atual++;
+            mostrarPergunta();
+        } else {
+            mostrarResultado();
+        }
+    }
+
+    function mostrarResultado() {
+        document.getElementById("contador").textContent = "Exercício concluído";
+        document.getElementById("pergunta").textContent =
+            "Você acertou " + pontos + " de " + questoes.length + " perguntas!";
+        document.getElementById("alternativas").innerHTML = "";
+        document.getElementById("feedback").textContent =
+            pontos === questoes.length
+                ? "Excelente! Você acertou todas. Continue estudando!"
+                : "Bom trabalho! Revise as aulas e tente novamente.";
+        const proximo = document.getElementById("proximo");
+        proximo.hidden = false;
+        proximo.textContent = "Refazer exercício";
+        proximo.onclick = reiniciar;
+    }
+
+    function reiniciar() {
+        atual = 0;
+        pontos = 0;
+        document.getElementById("proximo").onclick = proximaPergunta;
+        mostrarPergunta();
+    }
+</script>
+
+</body>
+</html>
